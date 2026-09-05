@@ -1,0 +1,16 @@
+generated: '2026-09-05'
+method: searched
+source: https://support.getzippin.com/hc/en-us/articles/14978971623828-Reports-Dashboard-and-API-pulls
+limit_count: 0
+rate_limits: []
+headers: []
+note: 'No published rate limits. The only public description of the Zippin API — the
+  retailer help-center article "Reports Dashboard and API pulls" — states only that "the API
+  is a standard rest API with a nested JSON payload" and that "teams can access the Zippin
+  API endpoint at any time you desire", with a choice of pulling a given date or only change
+  transactions since a point in time. No quota, window, burst, 429 behaviour or
+  RateLimit-*/Retry-After header is documented anywhere public, and the live host returns
+  401 before any limit can be observed unauthenticated.'
+evidence:
+- {url: 'https://support.getzippin.com/api/v2/help_center/en-us/articles/14978971623828.json', status: 200}
+- {url: 'https://api.getzippin.com/v1', status: 401}

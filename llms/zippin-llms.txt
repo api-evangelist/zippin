@@ -1,0 +1,64 @@
+# Zippin
+
+> Zippin (vCognition Technologies Inc., San Francisco) builds a checkout-free, cashierless
+> retail platform using computer vision, sensor fusion and machine learning. Shoppers enter
+> with an app, credit card or campus credential, take what they want and leave; the platform
+> bills the cart automatically. Its integration surface is the Zippin Gateway, an API
+> framework Zippin says connects the platform to 25+ third-party systems — payment gateways,
+> loyalty and gift providers, campus card systems, inventory, POS and self-service beverage
+> hardware. Zippin publishes NO public developer portal, NO API reference and NO
+> machine-readable API description; the live API host answers every request with HTTP 401.
+
+## What is callable
+
+- [Zippin Gateway (base URL)](https://api.getzippin.com/v1): live but fully credential-gated.
+  Every path under /v1 returns HTTP 401 with
+  {"error":{"type":"authentication_error","code":"authentication_failure",...}}. Access is for
+  Zippin retailers and integration partners under contract. Probed 2026-09-05.
+- The only public description of the API is one retailer help-center article: it is "a standard
+  rest API with a nested JSON payload", pullable either for a given date or for change
+  transactions since a point in time.
+
+## Docs
+
+- [Zippin technology / Zippin Gateway](https://www.getzippin.com/zippin-technology)
+- [Product overview](https://www.getzippin.com/product)
+- [Reports Dashboard and API pulls](https://support.getzippin.com/hc/en-us/articles/14978971623828-Reports-Dashboard-and-API-pulls)
+- [Retailer support center](https://support.getzippin.com/hc/en-us)
+- [Technology partners](https://www.getzippin.com/partners)
+- [For retailers](https://www.getzippin.com/retailers)
+- [For shoppers](https://www.getzippin.com/shoppers)
+
+## Company
+
+- [Website](https://www.getzippin.com/)
+- [About](https://www.getzippin.com/about)
+- [Blog](https://www.getzippin.com/blog) ([RSS](https://www.getzippin.com/blog/rss.xml))
+- [White papers](https://www.getzippin.com/whitepapers)
+- [Press and resources](https://www.getzippin.com/press-and-resources)
+- [Careers](https://www.getzippin.com/careers)
+- [Store Dashboard sign-in](https://dashboard.getzippin.com/)
+- [Privacy policy](https://www.getzippin.com/privacy)
+- [Retailer terms](https://www.getzippin.com/en/retailer-terms)
+
+## API Evangelist profile artifacts
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/zippin/refs/heads/main/apis.yml)
+- [Conventions (observed)](https://raw.githubusercontent.com/api-evangelist/zippin/refs/heads/main/conventions/zippin-conventions.yml)
+- [Error envelope (observed)](https://raw.githubusercontent.com/api-evangelist/zippin/refs/heads/main/errors/zippin-problem-types.yml)
+- [Lifecycle (observed)](https://raw.githubusercontent.com/api-evangelist/zippin/refs/heads/main/lifecycle/zippin-lifecycle.yml)
+- [Domain security (probed)](https://raw.githubusercontent.com/api-evangelist/zippin/refs/heads/main/security/zippin-domain-security.yml)
+- [Well-known probe (zero documents)](https://raw.githubusercontent.com/api-evangelist/zippin/refs/heads/main/well-known/zippin-well-known.yml)
+- [Packages (none first-party)](https://raw.githubusercontent.com/api-evangelist/zippin/refs/heads/main/packages/zippin-packages.yml)
+- [Plans and pricing (none published)](https://raw.githubusercontent.com/api-evangelist/zippin/refs/heads/main/plans/zippin-plans-pricing.yml)
+- [Rate limits (none published)](https://raw.githubusercontent.com/api-evangelist/zippin/refs/heads/main/rate-limits/zippin-rate-limits.yml)
+
+## Not published (checked 2026-09-05)
+
+- No OpenAPI, Swagger, GraphQL, AsyncAPI, gRPC or WSDL contract on any Zippin host.
+- No MCP server, no A2A agent card, no /llms.txt, no /apis.json.
+- No SDK or client library in npm, PyPI, RubyGems or the company's GitHub presence.
+  (npm "@zippin/react" and the GitHub org "zippin-io" are a DIFFERENT company — zippin.dev
+  file uploads and zippin.io respectively — and are not Zippin's.)
+- No status page, changelog, deprecation policy, pricing page, sandbox, CLI or Postman
+  collection.

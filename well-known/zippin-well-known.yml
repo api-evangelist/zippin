@@ -1,0 +1,94 @@
+generated: '2026-09-05'
+method: probed
+source: live GET of each named /.well-known/ path on every host in apis.yml
+note: 'Zero real documents. Every host Zippin runs either 404s the whole named path list
+  (www.getzippin.com, api.getzippin.com, support.getzippin.com) or is a single-page-app
+  catch-all that answers 200 with the same 719-byte HTML shell for every path, including a
+  negative-control path that cannot exist (dashboard.getzippin.com). No WellKnown and no
+  SecurityTxt pointer is emitted: nothing was fetched and nothing was saved. The one
+  machine-readable security contact Zippin does publish is a DNS CAA iodef record
+  (mailto:security@getzippin.com), captured in security/zippin-domain-security.yml.'
+hit_count: 0
+hosts:
+- host: https://www.getzippin.com
+  soft_404_control:
+    path: /.well-known/zippin-negative-control-7f3ab91c.json
+    status: 404
+    bytes: 43235
+  path_echo_control: passed
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /.well-known/apis.json, status: 404}
+  - {path: /.well-known/aauth-resource.json, status: 404}
+  - {path: /apis.json, status: 404}
+  - {path: /apis.yml, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://api.getzippin.com
+  soft_404_control:
+    path: /.well-known/zippin-negative-control-7f3ab91c.json
+    status: 404
+    bytes: 21
+  path_echo_control: passed
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /.well-known/apis.json, status: 404}
+  - {path: /.well-known/aauth-resource.json, status: 404}
+  - {path: /apis.json, status: 404}
+  - {path: /apis.yml, status: 404}
+  - {path: /llms.txt, status: 404}
+- host: https://dashboard.getzippin.com
+  catch_all: true
+  soft_404_control:
+    path: /.well-known/zippin-negative-control-7f3ab91c.json
+    status: 200
+    bytes: 719
+    verdict: 'SPA catch-all — a 200 here is not a document'
+  path_echo_control: failed
+  documents:
+  - {path: /.well-known/security.txt, status: 200, note: SPA shell, not a document}
+  - {path: /.well-known/openid-configuration, status: 200, note: SPA shell, not a document}
+  - {path: /.well-known/oauth-authorization-server, status: 200, note: SPA shell, not a document}
+  - {path: /.well-known/oauth-protected-resource, status: 200, note: SPA shell, not a document}
+  - {path: /.well-known/api-catalog, status: 200, note: SPA shell, not a document}
+  - {path: /.well-known/ai-plugin.json, status: 200, note: SPA shell, not a document}
+  - {path: /.well-known/agent-card.json, status: 200, note: SPA shell, not a document}
+  - {path: /.well-known/agent.json, status: 200, note: SPA shell, not a document}
+  - {path: /.well-known/apis.json, status: 200, note: SPA shell, not a document}
+  - {path: /.well-known/aauth-resource.json, status: 200, note: SPA shell, not a document}
+  - {path: /apis.json, status: 200, note: SPA shell, not a document}
+  - {path: /apis.yml, status: 200, note: SPA shell, not a document}
+  - {path: /llms.txt, status: 200, note: SPA shell, not a document}
+- host: https://support.getzippin.com
+  soft_404_control:
+    path: /.well-known/zippin-negative-control-7f3ab91c.json
+    status: 404
+    bytes: 10863
+  path_echo_control: passed
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /.well-known/apis.json, status: 404}
+  - {path: /.well-known/aauth-resource.json, status: 404}
+  - {path: /apis.json, status: 404}
+  - {path: /apis.yml, status: 404}
+  - {path: /llms.txt, status: 404}

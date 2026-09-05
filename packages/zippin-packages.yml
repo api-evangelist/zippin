@@ -1,0 +1,37 @@
+generated: '2026-09-05'
+method: searched
+source: 'npm registry search + registry.npmjs.org metadata, pypi.org/pypi/zippin/json,
+  github.com/orgs/zippin-io, and the getzippin.com partner/technology pages'
+package_count: 0
+packages: []
+note: 'No first-party Zippin client library exists in any public registry. Zippin publishes
+  no SDK, no developer portal and no package links; the Zippin Gateway is described only as
+  a REST API delivered to retailers and integration partners under contract.'
+ownership_rejections:
+- candidate: '@zippin/react'
+  registry: npm
+  url: https://www.npmjs.com/package/@zippin/react
+  version: 1.0.6
+  published: '2023-02-16'
+  verdict: rejected-different-company
+  reason: 'Named "Zippin React SDK" but it is a file-upload dropzone component whose own
+    README sends users to https://zippin.dev for an API key and whose npm maintainers are
+    @ssudler (sequoyah@hyper.co) and @botvinick. It has no relationship to
+    vCognition Technologies / getzippin.com checkout-free retail. Not saved as a Zippin
+    package.'
+- candidate: github.com/zippin-io
+  registry: github
+  url: https://github.com/zippin-io
+  version: null
+  published: null
+  verdict: rejected-different-company
+  reason: 'GitHub organization named "Zippin" whose profile blog is https://www.zippin.io
+    (a different company; the domain does not resolve over HTTPS) and which has 0 public
+    repositories. Not getzippin.com.'
+- candidate: pypi.org/project/zippin
+  registry: pypi
+  url: https://pypi.org/pypi/zippin/json
+  version: null
+  published: null
+  verdict: absent
+  reason: 'HTTP 404 — no package of this name on PyPI.'

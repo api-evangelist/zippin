@@ -1,0 +1,13 @@
+generated: '2026-09-05'
+method: searched
+source: https://www.getzippin.com/retailers
+plan_count: 0
+plans: []
+note: 'Zippin publishes no pricing page and no plan tiers. https://www.getzippin.com/pricing
+  returns HTTP 404 and the sitemap contains no pricing URL; every commercial path on the
+  site is a "Get in touch" / demo-request form routed to sales, and the platform is sold as
+  a contracted deployment (store hardware plus the Zippin Gateway integration) rather than
+  as a self-service API product. An honest zero, not an unchecked field.'
+evidence:
+- {url: 'https://www.getzippin.com/pricing', status: 404}
+- {url: 'https://www.getzippin.com/retailers', status: 200}

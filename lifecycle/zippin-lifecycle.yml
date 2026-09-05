@@ -1,0 +1,33 @@
+generated: '2026-09-05'
+method: probed
+source: 'live probes of api.getzippin.com + a search of getzippin.com and the Zippin
+  retailer help center for versioning, deprecation, SLA and status pages'
+versioning:
+  scheme: uri-path
+  current: v1
+  docs: null
+  note: 'Observed, not documented. https://api.getzippin.com/v1 and every path beneath it
+    answers HTTP 401 with a JSON authentication_error, while https://api.getzippin.com/v2
+    answers the same way and unknown top-level paths answer 404 "default backend - 404" —
+    so a /v1 path segment is in use, but Zippin publishes no versioning policy.'
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: 'No deprecation or sunset policy published. No Deprecation pointer is emitted.'
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+status_page_note: 'No status page. status.getzippin.com does not resolve (NXDOMAIN), and
+  neither getzippin.com nor the retailer help center links a status or uptime page. No
+  StatusPage pointer is emitted.'
+changelog: null
+changelog_note: 'No dated public changelog. The Zippin blog is marketing/press; the retailer
+  help center (56 articles) carries per-article updated_at timestamps but is not a release
+  log for the API.'
+deprecated_operations: []
+evidence:
+- {url: 'https://api.getzippin.com/v1', status: 401}
+- {url: 'https://api.getzippin.com/v2', status: 401}
+- {url: 'https://api.getzippin.com/zippin-negative-control-7f3ab91c', status: 404}
+- {host: 'status.getzippin.com', dns: NXDOMAIN}

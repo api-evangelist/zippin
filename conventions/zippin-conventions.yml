@@ -1,0 +1,74 @@
+generated: '2026-09-05'
+method: probed
+source: 'https://api.getzippin.com/v1 (live, unauthenticated) +
+  https://support.getzippin.com/hc/en-us/articles/14978971623828-Reports-Dashboard-and-API-pulls'
+scope_note: 'Zippin publishes no API reference, so almost everything below is either observed
+  from the live edge or quoted from the one retailer help-center article that describes the
+  API. Fields recorded as undocumented are genuinely undocumented in public, not unchecked.'
+authentication:
+  required: true
+  style: undocumented
+  observed: 'Every request to https://api.getzippin.com/v1 and below is rejected with HTTP
+    401 {"error":{"type":"authentication_error","code":"authentication_failure","message":"Failed
+    Authentication: Missing or invalid authentication credentials"}}. No WWW-Authenticate
+    header is returned, no OAuth or OIDC discovery document is served on any Zippin host, and
+    the credential type (API key vs. bearer token), its header name and how a retailer
+    obtains one are not published anywhere public.'
+  discovery_documents: none
+idempotency:
+  coverage: none
+  mechanism: null
+  header: null
+  scope: null
+  retention: null
+  note: 'No replay-protection contract is published. No Idempotency-Key header, request-id
+    dedupe window or retry-safety statement appears in Zippin''s public material, and there is
+    no OpenAPI to read one from. Recorded as none, which is what a consumer can rely on — not
+    a claim that the server lacks internal protection. No Idempotency pointer is emitted.'
+reversibility:
+  status: undocumented
+  grade: null
+  write_surface: unknown
+  reversals: []
+  note: 'Zippin''s product does have reversal semantics — the retailer help center documents
+    refunds, returns and "refunds back to card", and the Order Details export carries refund
+    and declined-payment columns — but those are described as Store Dashboard operations, not
+    API operations, and no reversal endpoint, operationId or time window is published. Never
+    asserting a window the docs do not state: no window is recorded.'
+  docs: https://support.getzippin.com/hc/en-us/articles/22694520484244
+pagination:
+  style: undocumented
+  note: 'The help center describes two pull modes rather than a pagination model: (1) pull by
+    date — "the date for which to pull information"; and (2) an incremental/delta mode — "the
+    date in time from which, that point in time, you want only change transactions", described
+    as "a push of unique data only". Page/cursor parameters and response envelope fields are
+    not published.'
+payload:
+  media_type: application/json
+  shape: 'nested JSON'
+  quote: 'The API is a standard rest API with a nested JSON payload.'
+  source: https://support.getzippin.com/hc/en-us/articles/14978971623828-Reports-Dashboard-and-API-pulls
+error_envelope:
+  root: error
+  fields: [type, code, message]
+  rfc9457: false
+  see: errors/zippin-problem-types.yml
+versioning:
+  style: uri-path
+  current: v1
+  see: lifecycle/zippin-lifecycle.yml
+rate_limit_signaling:
+  documented: false
+  headers: []
+  see: rate-limits/zippin-rate-limits.yml
+request_tracing:
+  request_id_header: null
+  observed_response_headers: [etag, vary, strict-transport-security, x-content-type-options,
+    x-frame-options, referrer-policy, content-security-policy]
+  note: 'The 401 response carries a hardening header set (Helmet-style) and a weak ETag, but
+    no correlation/request-id header is exposed to an unauthenticated caller.'
+webhooks:
+  documented: false
+  note: 'No webhook or event catalog is published. The help center describes the delta pull as
+    "a push of unique data only", but does not document a subscription, callback URL or event
+    schema, so no Webhooks pointer is emitted.'

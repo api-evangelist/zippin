@@ -1,0 +1,36 @@
+generated: '2026-09-05'
+method: probed
+source: https://api.getzippin.com/v1
+format: vendor-envelope
+format_note: 'Not RFC 9457. The Zippin API returns a nested JSON envelope on the single
+  error condition observable without credentials: a top-level "error" object carrying
+  "type", "code" and "message". Content-Type is application/json, not
+  application/problem+json.'
+envelope:
+  root: error
+  fields: [type, code, message]
+  example: '{"error":{"type":"authentication_error","code":"authentication_failure","message":"Failed
+    Authentication: Missing or invalid authentication credentials"}}'
+problems:
+- status: 401
+  type: authentication_error
+  code: authentication_failure
+  title: 'Failed Authentication: Missing or invalid authentication credentials'
+  observed_at: https://api.getzippin.com/v1
+  note: 'Returned for every path under /v1, including paths that cannot exist — the gate is
+    applied at the edge before routing, so a 401 here is not evidence that a given endpoint
+    exists.'
+- status: 404
+  type: null
+  code: null
+  title: 'default backend - 404'
+  content_type: text/plain
+  observed_at: https://api.getzippin.com/
+  note: 'Unrouted top-level paths fall through to an ingress default backend and return a
+    21-byte plain-text body, not the JSON envelope.'
+coverage_note: 'Only the unauthenticated error surface could be catalogued. Zippin publishes
+  no error reference, and every 4xx/5xx beyond authentication sits behind the credential
+  wall.'
+pointer_note: 'No ErrorCatalog pointer is wired in apis.yml. This file is our observation of
+  the live edge, not an error reference Zippin publishes — crediting the provider with a
+  published error catalog on the strength of one probed 401 would be a false claim.'
