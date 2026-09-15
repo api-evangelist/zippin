@@ -1,17 +1,15 @@
 aid: zippin
 name: Zippin
-description: 'Zippin (vCognition Technologies Inc.) builds a checkout-free, cashierless
-  retail platform that uses computer vision, sensor fusion and machine learning to let
-  shoppers enter a store with an app, credit card or campus credential, take what they
-  want and leave without a checkout line. The company sells store formats including the
-  Zippin Retrofit, Zippin Lane, Zippin Walk-Up, Micromarket Lite and Zippin Outdoors, and
-  operates in stadiums, arenas, airports, hotels, theme parks, college campuses and
-  convenience retail. Its integration surface is the Zippin Gateway, an API framework the
-  company says connects the platform to more than 25 third-party systems — payment
-  gateways, loyalty and gift programs, campus card providers, inventory systems, POS and
-  self-service beverage hardware — alongside a Store Dashboard whose Reports Dashboard
-  data can also be pulled through a REST API with nested JSON payloads. Founded by
-  veterans of Amazon and SRI, Zippin is headquartered in San Francisco.'
+description: Zippin (vCognition Technologies Inc.) builds a checkout-free, cashierless retail platform
+  that uses computer vision, sensor fusion and machine learning to let shoppers enter a store with an
+  app, credit card or campus credential, take what they want and leave without a checkout line. The company
+  sells store formats including the Zippin Retrofit, Zippin Lane, Zippin Walk-Up, Micromarket Lite and
+  Zippin Outdoors, and operates in stadiums, arenas, airports, hotels, theme parks, college campuses and
+  convenience retail. Its integration surface is the Zippin Gateway, an API framework the company says
+  connects the platform to more than 25 third-party systems — payment gateways, loyalty and gift programs,
+  campus card providers, inventory systems, POS and self-service beverage hardware — alongside a Store
+  Dashboard whose Reports Dashboard data can also be pulled through a REST API with nested JSON payloads.
+  Founded by veterans of Amazon and SRI, Zippin is headquartered in San Francisco.
 image: https://www.getzippin.com/hs-fs/hubfs/zippinlogocolor-266x68.png
 url: https://raw.githubusercontent.com/api-evangelist/zippin/refs/heads/main/apis.yml
 x-type: company
@@ -20,6 +18,22 @@ specificationVersion: '0.20'
 created: '2026-09-05'
 modified: '2026-09-05'
 tags:
+- Company
+- Retail
+- Retail Technology
+- Checkout-Free
+- Cashierless
+- Computer-Vision
+- Artificial Intelligence
+- Machine-Learning
+- Point-of-Sale
+- Payments
+- Loyalty
+- Inventory
+- Sports Venues
+- Airports
+- Higher Education
+tags_raw:
 - Company
 - Retail
 - Retail Technology
@@ -36,22 +50,26 @@ tags:
 - Airports
 - Higher Education
 apis:
-- aid: zippin-gateway
+- aid: zippin:zippin-gateway
   name: Zippin Gateway
-  description: 'The Zippin Gateway is Zippin''s integration/API framework for its
-    checkout-free store platform — the surface retailers and partners use to connect
-    payment gateways, loyalty and gift providers, campus card systems, inventory systems
-    and POS to a Zippin store, and to pull order, cart and reporting data. Zippin''s own
-    retailer documentation describes it as "a standard rest API with a nested JSON
-    payload" that a retailer team can call either for a given date or for change
-    transactions since a point in time. No public API reference, OpenAPI description or
-    developer portal is published: the live host at https://api.getzippin.com answers every
-    /v1/* request with an HTTP 401 authentication_error, so the operation surface is
-    reachable only by Zippin customers and integration partners.'
+  description: 'The Zippin Gateway is Zippin''s integration/API framework for its checkout-free store
+    platform — the surface retailers and partners use to connect payment gateways, loyalty and gift providers,
+    campus card systems, inventory systems and POS to a Zippin store, and to pull order, cart and reporting
+    data. Zippin''s own retailer documentation describes it as "a standard rest API with a nested JSON
+    payload" that a retailer team can call either for a given date or for change transactions since a
+    point in time. No public API reference, OpenAPI description or developer portal is published: the
+    live host at https://api.getzippin.com answers every /v1/* request with an HTTP 401 authentication_error,
+    so the operation surface is reachable only by Zippin customers and integration partners.'
   image: https://www.getzippin.com/hs-fs/hubfs/zippinlogocolor-266x68.png
   humanURL: https://www.getzippin.com/zippin-technology
   baseURL: https://api.getzippin.com/v1
   tags:
+  - Checkout-Free
+  - Retail
+  - Reporting
+  - Order
+  - Payments
+  tags_raw:
   - Checkout Free
   - Retail
   - Reporting
@@ -60,11 +78,9 @@ apis:
   x-evidence:
     probed: '2026-09-05'
     base_url_status: 401
-    base_url_note: 'GET https://api.getzippin.com/v1 and every path under it returns HTTP
-      401 {"error":{"type":"authentication_error","code":"authentication_failure"}}; the
-      bare host root and unknown top-level paths return 404 "default backend - 404". The
-      base URL is recorded from that live probe, not from published documentation — Zippin
-      publishes no API reference.'
+    base_url_note: GET https://api.getzippin.com/v1 and every path under it returns HTTP 401 {"error":{"type":"authentication_error","code":"authentication_failure"}};
+      the bare host root and unknown top-level paths return 404 "default backend - 404". The base URL
+      is recorded from that live probe, not from published documentation — Zippin publishes no API reference.
   properties:
   - type: Documentation
     url: https://support.getzippin.com/hc/en-us/articles/14978971623828-Reports-Dashboard-and-API-pulls
@@ -120,12 +136,11 @@ x-enrichment:
 x-coverage:
   state: gated
   reason: customer-only-docs
-  detail: 'Zippin markets the "Zippin Gateway" API framework but publishes no developer
-    portal, no API reference and no machine-readable contract anywhere; the live host
-    api.getzippin.com answers every path under /v1 — including paths that cannot exist —
-    with an HTTP 401 authentication_error, and the only public description of the API is a
-    single retailer help-center article saying it is "a standard rest API with a nested JSON
-    payload".'
+  detail: Zippin markets the "Zippin Gateway" API framework but publishes no developer portal, no API
+    reference and no machine-readable contract anywhere; the live host api.getzippin.com answers every
+    path under /v1 — including paths that cannot exist — with an HTTP 401 authentication_error, and the
+    only public description of the API is a single retailer help-center article saying it is "a standard
+    rest API with a nested JSON payload".
   evidence:
   - url: https://api.getzippin.com/v1
     status: 401
