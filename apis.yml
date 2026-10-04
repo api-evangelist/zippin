@@ -23,9 +23,9 @@ tags:
 - Retail Technology
 - Checkout-Free
 - Cashierless
-- Computer-Vision
+- Computer Vision
 - Artificial Intelligence
-- Machine-Learning
+- Machine Learning
 - Point-of-Sale
 - Payments
 - Loyalty
@@ -49,6 +49,8 @@ tags_raw:
 - Sports Venues
 - Airports
 - Higher Education
+- Computer-Vision
+- Machine-Learning
 apis:
 - aid: zippin:zippin-gateway
   name: Zippin Gateway
