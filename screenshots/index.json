@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "zippin",
+    "captured_at": "2026-10-11T195129",
+    "source_url": "https://www.getzippin.com/",
+    "source_type": "Website",
+    "file": "zippin-2026-10-11T195129.png",
+    "bytes": 77673,
+    "capture": "playwright-local"
+  }
+]
