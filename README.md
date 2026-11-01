@@ -64,5 +64,99 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Zippin is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.hiive.com/securities/zippin-stock
+Zippin (vCognition Technologies Inc.) builds a checkout-free, cashierless retail platform that uses computer vision, sensor fusion and machine learning to let shoppers enter a store with an app, credit card or campus credential, take what they want and leave without a checkout line. The company sells store formats including the Zippin Retrofit, Zippin Lane, Zippin Walk-Up, Micromarket Lite and Zippin Outdoors, and operates in stadiums, arenas, airports, hotels, theme parks, college campuses and convenience retail. Its integration surface is the Zippin Gateway, an API framework the company says connects the platform to more than 25 third-party systems — payment gateways, loyalty and gift programs, campus card providers, inventory systems, POS and self-service beverage hardware — alongside a Store Dashboard whose Reports Dashboard data can also be pulled through a REST API with nested JSON payloads. Founded by veterans of Amazon and SRI, Zippin is headquartered in San Francisco.
+
+**Areas:** Company · Retail · Retail Technology · Checkout-Free · Cashierless · Computer Vision · Artificial Intelligence · Machine Learning · Point-of-Sale · Payments · Loyalty · Inventory
+
+## Zippin on APIs.io
+
+Everything profiled for Zippin is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/zippin/](https://apis.io/providers/zippin/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Zippin Gateway](https://apis.io/apis/zippin/zippin-gateway/) — The Zippin Gateway is Zippin's integration/API framework for its checkout-free store platform — the surface retailers and partners use to connect payment…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Zippin Domain Security](https://apis.io/security/zippin/zippin-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Zippin Plans Pricing](https://apis.io/plans/zippin/zippin-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Zippin Rate Limits](https://apis.io/rate-limits/zippin/zippin-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.getzippin.com/)
+- [Support](https://support.getzippin.com/hc/en-us)
+- [Blog](https://www.getzippin.com/blog)
+- [Terms of service](https://www.getzippin.com/en/retailer-terms)
+- [Privacy policy](https://www.getzippin.com/privacy)
+
+## API Evangelist rating
+
+**Kin Score 15.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 74.1 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 16.7 |
+| Access clarity | 27.6 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.7** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/zippin/](https://apis.io/providers/zippin/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Zippin: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/zippin/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
